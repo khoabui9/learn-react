@@ -1,16 +1,13 @@
 //Project.js
 import React, { Component } from 'react';
 import style from './style';
+import ProjectItem from './ProjectItem';
 
 class Project extends Component {
-	 render() {
+	render() {
 		 let projectNodes = this.props.data.map(project => {
 			 return (
-			 	<div className="col-sm-4">
-				 	<h1>{project.title}</h1>
-				 	<p>{project.desc}</p>
-
-				</div>
+				 	<ProjectItem title = {project.title} desc={project.desc} uniqueID={ project._id } key={ project._id}></ProjectItem>
 			 )
 		 })
 			 return (
